@@ -1,0 +1,46 @@
+name: Site issue
+description: Report a display or functionality problem without sharing student data.
+title: "[Site issue]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Privacy reminder:** this is a public issue. Do not include student IDs, names, personal schedules, passwords, or screenshots containing student data.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What is the issue about?
+      options:
+        - Page display or mobile layout
+        - Search behavior
+        - Calendar export
+        - Accessibility
+        - Other site issue
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the issue without including a student ID or personal schedule.
+      placeholder: The calendar button does not download an event when I click it.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include general steps only. Do not enter real student IDs.
+      placeholder: |
+        1. Open the website.
+        2. Enter a made-up ID.
+        3. Select Find my schedule.
+    validations:
+      required: false
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Chrome on Windows 11
+    validations:
+      required: false
