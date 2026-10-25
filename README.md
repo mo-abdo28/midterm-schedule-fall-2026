@@ -21,8 +21,13 @@ The Fall 2026 dataset currently contains **1,029 exam groups** and **4,816 uniqu
 
 - **Indexed ID lookup:** the schedule is transformed into a `Map` once at startup, so each search resolves directly to the matching exams.
 - **Useful exam details:** course code, program, date, time, room, and facility are shown when present in the source data.
+- **Calendar export:** every exam can be downloaded as an `.ics` event, using Cairo local time.
+- **Schedule conflict warnings:** overlapping exam times on the same day are flagged for review.
+- **At-a-glance timing:** results are sorted chronologically and show a countdown to each exam.
+- **Official links:** students can verify information in the NU student portal and report schedule issues through the Registrar's office.
+- **Easy sharing:** share the site link through the device share sheet or copy it to the clipboard.
 - **Clear states:** the page guides students when the search field is empty or an ID has no matching schedule.
-- **Responsive interface:** layouts, controls, and result cards adapt to narrow screens and support keyboard form submission.
+- **Responsive interface:** layouts, controls, and result cards adapt to narrow screens and support keyboard form submission; the site also includes favicon and social preview metadata.
 - **Accessible semantics:** labeled form controls, visible focus styling, descriptive image text, and a live results region support assistive technology.
 - **Static deployment:** the site runs on GitHub Pages without a server, build step, third-party runtime library, or external API.
 
@@ -43,9 +48,13 @@ At page load, each exam group's student IDs are indexed to that exam. Search use
 
 ```text
 .
-├── index.html                     # Accessible responsive UI, lookup logic, and schedule data
+├── index.html                     # Accessible responsive page and Nile University branding
 ├── assets/
+│   ├── app.js                     # ID index, schedule rendering, calendar export, and sharing
+│   ├── favicon.svg                # Browser tab icon
 │   └── nile-university-logo.jpg   # University logo used by the site and this README
+├── data/
+│   └── schedule.js                # Fall 2026 exam groups and student IDs
 └── README.md
 ```
 
@@ -61,7 +70,7 @@ Then open <http://localhost:8000>.
 
 ## Schedule updates
 
-The schedule is embedded in `index.html` as a JavaScript array. To update it, replace that array with the latest verified schedule while retaining each exam's `ids`, `subject`, `time`, `room`, and `date` fields. `program` and `facility` are optional. Dates use the `YYYY-MM-DD` format. Review representative IDs and exam details against the university's published schedule before deployment.
+The schedule is stored in `data/schedule.js` as a JavaScript array. To update it, replace that array with the latest verified schedule while retaining each exam's `ids`, `subject`, `time`, `room`, and `date` fields. `program` and `facility` are optional. Dates use the `YYYY-MM-DD` format. Review representative IDs and exam details against the university's published schedule before deployment.
 
 ## Deploy
 
@@ -71,7 +80,7 @@ GitHub Pages serves this repository from the `main` branch root. Commit the upda
 
 ## Data and privacy
 
-This is a convenience lookup, not an authenticated student portal. The schedule and IDs embedded in a public static site can be downloaded by anyone, even though the page only displays results after an ID search. Publish only schedule data that is approved for public access, and verify all exam details against official university communications.
+This is a convenience lookup, not an authenticated student portal. Because GitHub Pages is static hosting, the schedule and IDs in `data/schedule.js` can be downloaded by anyone, even though the page only displays results after an ID search. The site links to the [official NU student portal](https://register.nu.edu.eg/AppFormProd/Home.aspx), where students can sign in to access their academic information. A university-authorized API or SSO integration is required before this project can provide authenticated ID lookup; official integration details have not yet been provided for this project. Do not add student passwords, session cookies, or private API credentials to this repository. Verify all exam details through official university channels.
 
 ## Credits
 
