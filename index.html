@@ -29,15 +29,49 @@
           <button class="share-button" id="shareButton" type="button" aria-label="Share the schedule website">Share</button>
         </div>
       </div>
-      <h1>My Midterm Schedule</h1>
-      <p class="subtitle">Your exam plan, at a glance. Search with your student ID to see registered courses, exam times, dates, and locations.</p>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="hero-kicker"><span aria-hidden="true"></span> A clearer plan for exam season</p>
+          <h1>My Midterm<br><span>Schedule</span></h1>
+          <p class="subtitle">One search gives you a clear view of your courses, exam dates, times, and rooms.</p>
+          <div class="hero-highlights">
+            <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 10 3.2 3.2L15.5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.2"/></svg>Clear exam details</span>
+            <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4.5" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 2.5v4M13.5 2.5v4M3 8.5h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Calendar-ready</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit art-orbit-one"></div>
+          <div class="art-orbit art-orbit-two"></div>
+          <div class="planner-card">
+            <div class="planner-top">
+              <span class="planner-monogram">NU</span>
+              <span class="planner-brandline"><b>STUDENT PLANNER</b><small>FALL 2026</small></span>
+              <span class="planner-menu">•••</span>
+            </div>
+            <div class="planner-title">Exam schedule</div>
+            <div class="planner-subtitle">Your semester, organized.</div>
+            <div class="planner-rule"></div>
+            <div class="planner-feature">
+              <span class="planner-feature-icon">01</span>
+              <span><b>Find your courses</b><small>Search with your student ID</small></span>
+              <span class="planner-arrow">↗</span>
+            </div>
+            <div class="planner-feature">
+              <span class="planner-feature-icon planner-feature-icon-blue">02</span>
+              <span><b>Plan exam day</b><small>Dates, rooms, and reminders</small></span>
+              <span class="planner-arrow">↗</span>
+            </div>
+          </div>
+          <span class="art-caption"><span></span> One search · a clearer plan</span>
+        </div>
+      </div>
     </div>
   </header>
   <main>
     <section class="search-panel" aria-label="Search student schedule">
       <div class="panel-heading">
         <span class="panel-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.3 4.3"/></svg></span>
-        <div><h2>Find your schedule</h2><p>Enter the student ID associated with your university registration.</p></div>
+        <div><span class="panel-kicker">PERSONALIZED EXAM LOOKUP</span><h2>Find your schedule</h2><p>Enter the student ID associated with your university registration.</p></div>
       </div>
       <form id="searchForm">
         <label for="studentId">Student ID</label>
